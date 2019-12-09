@@ -33,17 +33,27 @@ class Item: Decodable {
 		let price = try itemArrayDict.nestedContainer(keyedBy: CodingKeys.self, forKey: .price)
 		amount = try price.decode(Int.self, forKey: .amount)
 		currency = try price.decode(String.self, forKey: .currency)
-		container = try itemArrayDict.decode(String.self, forKey: .container)
+		container = ""
 	}
 	
 	class func getItems( completion: @escaping ([Item]? ) -> Void) {
 		Alamofire.request(NetworkRouter.goods).responseData { (response) in
 			do {
 				let decoder = JSONDecoder()
-				let items = try decoder.decode([Item].self, from: response.data!)
+				let items = try decoder.decode([Item].self, from: response.result.value!)
 				completion(items)
 			} catch let parsingError {
 				print("Error", parsingError)
+			}
+		}
+	}
+	
+	class func getImage(id: Int, completion: @escaping (String) -> Void) {
+		let idStr = String(id)
+		Alamofire.request(NetworkRouter.image(idStr)).responseJSON { (response) in
+			let value = response.value as? [String: String]
+			if let validImageURL = value!["image_url"] {
+				completion(validImageURL)
 			}
 		}
 	}

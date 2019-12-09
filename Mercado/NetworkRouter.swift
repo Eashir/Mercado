@@ -10,7 +10,7 @@ import Alamofire
 
 public enum NetworkRouter: URLRequestConvertible {
 	
-	static let baseURLPath = "http://bjss-basket.appspot.com/"
+	static let baseURLPath = "http://bjss-basket.appspot.com"
 	
 	case goods
 	case image(String)

@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		649E668001A7666BA6E5B98D /* Pods_Mercado.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18A2E4F82CEB68D35E2B7FC /* Pods_Mercado.framework */; };
 		C525D10F4947F4CAD747E056 /* Pods_MercadoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 601D4DF9B05B53AA0035D64F /* Pods_MercadoTests.framework */; };
+		CC01E0A2239EFC64009B6121 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC01E0A1239EFC64009B6121 /* ItemTableViewCell.swift */; };
 		CCC611EB239D4F4600CFE66F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC611EA239D4F4600CFE66F /* AppDelegate.swift */; };
 		CCC611F0239D4F4600CFE66F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCC611EE239D4F4600CFE66F /* Main.storyboard */; };
 		CCC611F2239D4F4A00CFE66F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCC611F1239D4F4A00CFE66F /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		272E0539A2FC95E661636941 /* Pods-MercadoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MercadoTests.debug.xcconfig"; path = "Target Support Files/Pods-MercadoTests/Pods-MercadoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5B4A800347747C41A4069780 /* Pods-MercadoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MercadoTests.release.xcconfig"; path = "Target Support Files/Pods-MercadoTests/Pods-MercadoTests.release.xcconfig"; sourceTree = "<group>"; };
 		601D4DF9B05B53AA0035D64F /* Pods_MercadoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MercadoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC01E0A1239EFC64009B6121 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		CCC611E7239D4F4600CFE66F /* Mercado.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mercado.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCC611EA239D4F4600CFE66F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCC611EF239D4F4600CFE66F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,7 +82,6 @@
 				272E0539A2FC95E661636941 /* Pods-MercadoTests.debug.xcconfig */,
 				5B4A800347747C41A4069780 /* Pods-MercadoTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -91,6 +92,32 @@
 				601D4DF9B05B53AA0035D64F /* Pods_MercadoTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CC01E09E239EF56F009B6121 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CCC611EE239D4F4600CFE66F /* Main.storyboard */,
+				CC01E0A1239EFC64009B6121 /* ItemTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CC01E09F239EF581009B6121 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CCC6120E239E9EBD00CFE66F /* CheckoutViewController.swift */,
+				CCC6120C239E9EAE00CFE66F /* ItemsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CC01E0A0239EF588009B6121 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CCC6120A239DBADE00CFE66F /* Item.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CCC611DE239D4F4600CFE66F = {
@@ -117,11 +144,10 @@
 			isa = PBXGroup;
 			children = (
 				CCC611EA239D4F4600CFE66F /* AppDelegate.swift */,
-				CCC6120A239DBADE00CFE66F /* Item.swift */,
+				CC01E0A0239EF588009B6121 /* Model */,
 				CCC61210239EA7AC00CFE66F /* NetworkRouter.swift */,
-				CCC6120C239E9EAE00CFE66F /* ItemsViewController.swift */,
-				CCC6120E239E9EBD00CFE66F /* CheckoutViewController.swift */,
-				CCC611EE239D4F4600CFE66F /* Main.storyboard */,
+				CC01E09F239EF581009B6121 /* Controller */,
+				CC01E09E239EF56F009B6121 /* View */,
 				CCC611F1239D4F4A00CFE66F /* Assets.xcassets */,
 				CCC611F3239D4F4A00CFE66F /* LaunchScreen.storyboard */,
 				CCC611F6239D4F4A00CFE66F /* Info.plist */,
@@ -329,6 +355,7 @@
 				CCC61211239EA7AC00CFE66F /* NetworkRouter.swift in Sources */,
 				CCC6120D239E9EAE00CFE66F /* ItemsViewController.swift in Sources */,
 				CCC611EB239D4F4600CFE66F /* AppDelegate.swift in Sources */,
+				CC01E0A2239EFC64009B6121 /* ItemTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
