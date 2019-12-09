@@ -67,14 +67,15 @@ extension ItemsViewController: UITableViewDataSource {
 
 extension ItemsViewController: UITableViewDelegate {
 	
-//	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//		let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//		guard let detailViewController = storyboard.instantiateViewController(withIdentifier: ViewControllerIdentifiers.Detail) as? DetailViewController else {
-//			return
-//		}
-//		detailViewController.puppy = puppies[indexPath.row]
-//		navigationController?.pushViewController(detailViewController, animated: true)
-//	}
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let item = items[indexPath.row]
+		let cell = tableView.cellForRow(at: indexPath)
+		if cell!.isSelected {
+			CheckoutCart.shared.addItem(item)
+		} else {
+			CheckoutCart.shared.removeItem(item)
+		}
+	}
 	
 }
 

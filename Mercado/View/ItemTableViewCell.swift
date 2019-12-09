@@ -18,6 +18,7 @@ class ItemTableViewCell: UITableViewCell {
 	override func prepareForReuse() {
 		super.prepareForReuse()
 		photoImageView.sd_cancelCurrentImageLoad()
+		
 	}
 	
 	func configure(_ item: Item) {
@@ -34,15 +35,6 @@ class ItemTableViewCell: UITableViewCell {
 	override func setSelected(_ selected: Bool, animated: Bool) {
 		super.setSelected(selected, animated: animated)
 		self.accessoryType = selected ? .checkmark : .none
-		
-		guard let item = item else {
-			return
-		}
-		if selected {
-			 CheckoutCart.shared.addItem(item)
-		} else {
-			CheckoutCart.shared.removeItem(item)
-		}
 	}
 	
 }
