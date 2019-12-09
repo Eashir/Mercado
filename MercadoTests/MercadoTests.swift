@@ -11,6 +11,8 @@ import XCTest
 
 class MercadoTests: XCTestCase {
 
+		var items: [Item]?
+	
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -20,6 +22,10 @@ class MercadoTests: XCTestCase {
     }
 
     func testExample() {
+			Item.getItems { (items) in
+				self.items = items
+				XCTAssertNotNil(self.items)
+			}
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
