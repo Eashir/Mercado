@@ -11,6 +11,7 @@ import SDWebImage
 
 class ItemTableViewCell: UITableViewCell {
 	
+	var item: Item!
 	@IBOutlet weak var photoImageView: UIImageView!
 	@IBOutlet weak var nameLabel: UILabel!
 	
@@ -20,12 +21,27 @@ class ItemTableViewCell: UITableViewCell {
 	}
 	
 	func configure(_ item: Item) {
+		self.item = item
 		nameLabel.text = item.name
 //		detailLabel.text = String(item.amount)
 		
 		Item.getImage(id: item.id) { (urlString) in
 			let imageURL = URL(string: urlString)
 			self.photoImageView.sd_setImage(with: imageURL)
+		}
+	}
+	
+	override func setSelected(_ selected: Bool, animated: Bool) {
+		super.setSelected(selected, animated: animated)
+		self.accessoryType = selected ? .checkmark : .none
+		
+		guard let item = item else {
+			return
+		}
+		if selected {
+			 CheckoutCart.shared.addItem(item)
+		} else {
+			CheckoutCart.shared.removeItem(item)
 		}
 	}
 	

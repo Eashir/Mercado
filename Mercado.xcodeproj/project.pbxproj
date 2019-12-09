@@ -10,6 +10,10 @@
 		649E668001A7666BA6E5B98D /* Pods_Mercado.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18A2E4F82CEB68D35E2B7FC /* Pods_Mercado.framework */; };
 		C525D10F4947F4CAD747E056 /* Pods_MercadoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 601D4DF9B05B53AA0035D64F /* Pods_MercadoTests.framework */; };
 		CC01E0A2239EFC64009B6121 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC01E0A1239EFC64009B6121 /* ItemTableViewCell.swift */; };
+		CC73186F239F0A490019536C /* CheckoutCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC73186E239F0A490019536C /* CheckoutCart.swift */; };
+		CC731871239F0BE30019536C /* CheckoutItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC731870239F0BE30019536C /* CheckoutItemTableViewCell.swift */; };
+		CC731873239F0C070019536C /* CheckoutTotalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC731872239F0C070019536C /* CheckoutTotalTableViewCell.swift */; };
+		CC731875239F0C3D0019536C /* NumberFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC731874239F0C3D0019536C /* NumberFormat.swift */; };
 		CCC611EB239D4F4600CFE66F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC611EA239D4F4600CFE66F /* AppDelegate.swift */; };
 		CCC611F0239D4F4600CFE66F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCC611EE239D4F4600CFE66F /* Main.storyboard */; };
 		CCC611F2239D4F4A00CFE66F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCC611F1239D4F4A00CFE66F /* Assets.xcassets */; };
@@ -37,6 +41,10 @@
 		5B4A800347747C41A4069780 /* Pods-MercadoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MercadoTests.release.xcconfig"; path = "Target Support Files/Pods-MercadoTests/Pods-MercadoTests.release.xcconfig"; sourceTree = "<group>"; };
 		601D4DF9B05B53AA0035D64F /* Pods_MercadoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MercadoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC01E0A1239EFC64009B6121 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		CC73186E239F0A490019536C /* CheckoutCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutCart.swift; sourceTree = "<group>"; };
+		CC731870239F0BE30019536C /* CheckoutItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutItemTableViewCell.swift; sourceTree = "<group>"; };
+		CC731872239F0C070019536C /* CheckoutTotalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutTotalTableViewCell.swift; sourceTree = "<group>"; };
+		CC731874239F0C3D0019536C /* NumberFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormat.swift; sourceTree = "<group>"; };
 		CCC611E7239D4F4600CFE66F /* Mercado.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mercado.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCC611EA239D4F4600CFE66F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCC611EF239D4F4600CFE66F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -99,6 +107,8 @@
 			children = (
 				CCC611EE239D4F4600CFE66F /* Main.storyboard */,
 				CC01E0A1239EFC64009B6121 /* ItemTableViewCell.swift */,
+				CC731870239F0BE30019536C /* CheckoutItemTableViewCell.swift */,
+				CC731872239F0C070019536C /* CheckoutTotalTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -106,8 +116,8 @@
 		CC01E09F239EF581009B6121 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CCC6120E239E9EBD00CFE66F /* CheckoutViewController.swift */,
 				CCC6120C239E9EAE00CFE66F /* ItemsViewController.swift */,
+				CCC6120E239E9EBD00CFE66F /* CheckoutViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -151,6 +161,8 @@
 				CCC611F1239D4F4A00CFE66F /* Assets.xcassets */,
 				CCC611F3239D4F4A00CFE66F /* LaunchScreen.storyboard */,
 				CCC611F6239D4F4A00CFE66F /* Info.plist */,
+				CC73186E239F0A490019536C /* CheckoutCart.swift */,
+				CC731874239F0C3D0019536C /* NumberFormat.swift */,
 			);
 			path = Mercado;
 			sourceTree = "<group>";
@@ -350,11 +362,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC731873239F0C070019536C /* CheckoutTotalTableViewCell.swift in Sources */,
+				CC731875239F0C3D0019536C /* NumberFormat.swift in Sources */,
 				CCC6120F239E9EBD00CFE66F /* CheckoutViewController.swift in Sources */,
 				CCC6120B239DBADE00CFE66F /* Item.swift in Sources */,
+				CC731871239F0BE30019536C /* CheckoutItemTableViewCell.swift in Sources */,
 				CCC61211239EA7AC00CFE66F /* NetworkRouter.swift in Sources */,
 				CCC6120D239E9EAE00CFE66F /* ItemsViewController.swift in Sources */,
 				CCC611EB239D4F4600CFE66F /* AppDelegate.swift in Sources */,
+				CC73186F239F0A490019536C /* CheckoutCart.swift in Sources */,
 				CC01E0A2239EFC64009B6121 /* ItemTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

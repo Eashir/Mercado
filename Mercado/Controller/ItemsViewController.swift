@@ -20,6 +20,8 @@ class ItemsViewController: UIViewController {
 		
 		tableView.delegate = self
 		tableView.dataSource = self
+		tableView.allowsMultipleSelection = true
+		tableView.allowsMultipleSelectionDuringEditing = true
 		
 		Item.getItems { (items) in
 			guard let validItems = items else {
